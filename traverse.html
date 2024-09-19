@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Traverse Computation</title>
+    <link rel="stylesheet" href="traverse.css" />
+  </head>
+  <body>
+    <h1>Advanced Traverse Computation</h1>
+
+    <form id="traverseForm">
+      <h3>Enter Initial Coordinates:</h3>
+      <label for="easting">Initial Easting (m):</label>
+      <input type="number" id="easting" name="easting" required />
+
+      <label for="northing">Initial Northing (m):</label>
+      <input type="number" id="northing" name="northing" required />
+
+      <label for="numLines">Enter No of Stations:</label>
+      <input type="number" id="numLines" name="numLines" min="1" required />
+
+      <div id="traverseInputs"></div>
+
+      <button type="button" onclick="computeTraverse()">
+        Compute Traverse
+      </button>
+      <button type="reset" class="reset-btn">Reset Form</button>
+    </form>
+
+    <h3>Traverse Results:</h3>
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th>Stations</th>
+          <th>Bearing (°)</th>
+          <th>Distance (m)</th>
+          <th>Δ Easting (m)</th>
+          <th>Δ Northing (m)</th>
+          <th>New Easting (m)</th>
+          <th>New Northing (m)</th>
+          <th>Cumulative Distance (m)</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <div id="error-warning"></div>
+
+    <script src="traverse.js"></script>
+  </body>
+</html>
